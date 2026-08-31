@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import mindspringOrbitRender from './assets/mindspring-orbit-render.webp'
@@ -350,7 +349,7 @@ function App() {
   }, [])
 
   return (
-    <main className="site" ref={siteRef}>
+    <main className="site" id="top" ref={siteRef}>
       {/* NAVIGATION */}
       <nav className="nav">
         <a className="logo" href="/">
@@ -363,7 +362,7 @@ function App() {
         <div className="nav-links">
           <a href="#services">Services</a>
           <a href="#about">About</a>
-          <a href="#resources">Resources</a>
+          <a href="#approach">Approach</a>
         </div>
 
         <a className="nav-cta" href="#contact">
@@ -421,14 +420,14 @@ function App() {
           <p>Clear, practical support that keeps your people productive and your business moving.</p>
         </article>
 
-        <article className="story-panel story-services" id="resources">
+        <article className="story-panel story-services">
           <p className="eyebrow">HOW WE HELP</p>
           <h2>Services that make an impact.</h2>
           <div className="story-service-list">
-            <Link to="/services/networks-servers"><span>01</span><h3>Networks &amp; Servers</h3><p>Reliable foundations that keep work moving.</p><b>↗</b></Link>
-            <Link to="/services/security"><span>02</span><h3>Security &amp; Testing</h3><p>Practical protection without friction.</p><b>↗</b></Link>
-            <Link to="/services/it-support"><span>03</span><h3>IT Support</h3><p>Friendly help when your team needs it.</p><b>↗</b></Link>
-            <Link to="/services/internet-hosting"><span>04</span><h3>Internet &amp; Hosting</h3><p>Connection wherever work happens.</p><b>↗</b></Link>
+            <a href="#contact"><span>01</span><h3>Networks &amp; Servers</h3><p>Reliable foundations that keep work moving.</p><b>↗</b></a>
+            <a href="#contact"><span>02</span><h3>Security &amp; Testing</h3><p>Practical protection without friction.</p><b>↗</b></a>
+            <a href="#contact"><span>03</span><h3>IT Support</h3><p>Friendly help when your team needs it.</p><b>↗</b></a>
+            <a href="#contact"><span>04</span><h3>Internet &amp; Hosting</h3><p>Connection wherever work happens.</p><b>↗</b></a>
           </div>
         </article>
 
@@ -442,7 +441,7 @@ function App() {
           <div className="story-orb-return" aria-hidden="true"><span /><span /><i /></div>
         </article>
 
-        <article className="story-panel story-approach">
+        <article className="story-panel story-approach" id="approach">
           <p className="eyebrow">OUR APPROACH</p>
           <h2>Simple. Thoughtful. Effective.</h2>
           <ol><li><b>01</b><strong>Understand</strong><span>We listen before we recommend.</span></li><li><b>02</b><strong>Design</strong><span>We make the right plan for you.</span></li><li><b>03</b><strong>Deliver</strong><span>We stay accountable after launch.</span></li></ol>
@@ -459,8 +458,11 @@ function App() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="footer-brand">
-          <a className="logo" href="/">
-            <img src="/mindspring-logo.png" alt="Mindspring Computing" />
+          <a className="logo" href="#top" aria-label="Mindspring Computing home">
+            <span className="logo-wordmark" aria-hidden="true">
+              <strong>MindSpring</strong>
+              <small>COMPUTING</small>
+            </span>
           </a>
 
           <p>
@@ -474,7 +476,7 @@ function App() {
             <span>EXPLORE</span>
             <a href="#services">Services</a>
             <a href="#about">About</a>
-            <a href="#resources">Resources</a>
+            <a href="#approach">Approach</a>
             <a href="#contact">Contact</a>
           </div>
 
