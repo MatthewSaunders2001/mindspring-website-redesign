@@ -51,7 +51,6 @@ function App() {
         .from(
           '.hero-world',
           {
-            scale: 0.9,
             x: 80,
             opacity: 0,
             duration: 1.2,
@@ -92,37 +91,8 @@ function App() {
         },
       })
 
-      // The first movement is the orbit opening; the globe follows it into the page.
-      gsap.to('.hero-world', {
-        xPercent: -7,
-        yPercent: -13,
-        scale: 1.1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.3,
-        },
-      })
-
       gsap.to('.hero-orbit-path', {
-        rotation: -16,
-        scale: 1.18,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.35,
-        },
-      })
-
-      gsap.to('.hero-orb', {
-        xPercent: -34,
-        yPercent: 44,
-        rotation: -12,
-        scale: 1.38,
+        rotation: -140,
         ease: 'none',
         scrollTrigger: {
           trigger: '.hero',
@@ -327,18 +297,6 @@ function App() {
         },
       })
 
-      gsap.to('.story-orb-return', {
-        yPercent: -18,
-        scale: 1.08,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.story-trust',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.35,
-        },
-      })
-
       ScrollTrigger.refresh()
     }, siteRef)
 
@@ -438,7 +396,6 @@ function App() {
             <p>We take ownership, speak plainly, and build solutions around the way your business works.</p>
           </div>
           <blockquote>“MindSpring gives our team confidence that technology is handled.”<cite>LONG-TERM CLIENT</cite></blockquote>
-          <div className="story-orb-return" aria-hidden="true"><span /><span /><i /></div>
         </article>
 
         <article className="story-panel story-approach" id="approach">
