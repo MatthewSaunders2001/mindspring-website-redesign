@@ -1,0 +1,44 @@
+/* Second visual refinement pass. */
+.premium-site .primary-button { border: 0; outline: 0; }
+.premium-site .primary-button:focus-visible { outline: 3px solid rgba(20, 89, 202, .45); outline-offset: 4px; }
+
+.service-intro-aside { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.1rem 0 0 1.4rem; border-left: 1px solid rgba(43, 104, 160, .25); }
+.service-intro-aside span { color: #2871b5; font-size: .7rem; font-weight: 800; letter-spacing: .16em; }
+.service-intro-aside p { max-width: 22rem; margin: .7rem 0 0; color: #416b90; font-size: 1.05rem; line-height: 1.55; }
+
+.service-card { position: relative; isolation: isolate; }
+.service-card::after { content: ''; position: absolute; z-index: 0; inset: 0; display: block; opacity: 0; background: linear-gradient(112deg, rgba(255,255,255,.95) 0%, rgba(213,230,242,.78) 47%, rgba(122,165,195,.38) 100%); transform: translateX(-102%); transition: opacity .1s ease; }
+.service-card > * { position: relative; z-index: 1; }
+.service-card:hover::after { opacity: 1; animation: silverSweep .65s cubic-bezier(.2,.8,.2,1) forwards; }
+.service-card:hover { color: #173b63; border-color: #f6fbff; background: #dcecf4; }
+.service-card:hover h3, .service-card:hover .service-card__outcome, .service-card:hover p, .service-card:hover button { color: #173b63 !important; }
+.service-card:hover svg { color: #1761a2; }
+.service-card:hover .service-card__top > span { color: #3d7daf; }
+
+.service-icon__network { animation: networkPulse 2.3s ease-in-out infinite; transform-origin: center; }
+.service-icon__support { animation: supportSignal 2.5s ease-in-out infinite; transform-origin: 60px 44px; }
+.service-icon__network path { stroke-dasharray: 180; animation: pathFlow 2.5s ease-in-out infinite; }
+.service-icon__support path:first-child { stroke-dasharray: 120; animation: pathFlow 2.8s ease-in-out infinite reverse; }
+
+.approach-section { position: relative; overflow: hidden; }
+.approach-section::before { content: ''; position: absolute; top: 37%; right: -12rem; width: 36rem; height: 36rem; border: 1px solid rgba(48, 119, 180, .13); border-radius: 50%; box-shadow: 0 0 0 2.5rem rgba(255,255,255,.16), 0 0 0 5rem rgba(104,164,213,.07); }
+.approach-section .premium-intro, .approach-steps { position: relative; z-index: 1; }
+.approach-steps { gap: 0; margin-top: 4.25rem; }
+.approach-steps li { padding: 1.9rem 1.75rem 1.8rem; background: rgba(255,255,255,.28); }
+.approach-steps li + li { padding-left: 1.75rem; }
+.approach-steps li::before { content: ''; position: absolute; top: -.38rem; left: 1.75rem; width: .7rem; height: .7rem; border: 3px solid #dcecf4; border-radius: 50%; background: #2c78bc; box-shadow: 0 0 0 1px rgba(44,120,188,.35); }
+
+.conversation__cta { position: relative; overflow: hidden; }
+.conversation__cta:hover { color: #fff; background: linear-gradient(to right, #1761df 50%, #fff 50%) right / 200% 100%; animation: conversationCharge 1.5s linear forwards; }
+
+@keyframes silverSweep { from { transform: translateX(-102%); } to { transform: translateX(0); } }
+@keyframes networkPulse { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes supportSignal { 0%,100% { transform: rotate(0); } 50% { transform: rotate(-3deg); } }
+@keyframes pathFlow { 0%,100% { stroke-dashoffset: 0; } 50% { stroke-dashoffset: 22; } }
+@keyframes conversationCharge { from { background-position: right; } to { background-position: left; } }
+
+@media (max-width: 680px) {
+  .service-intro-aside { padding: 1.2rem 0 0; border-top: 1px solid rgba(43, 104, 160, .25); border-left: 0; }
+  .approach-steps li, .approach-steps li + li { padding-left: 1.25rem; }
+  .approach-steps li::before { left: 1.25rem; }
+}
