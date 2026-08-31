@@ -4865,14 +4865,14 @@ height:650px;
 
 .story-promise {
   width: min(47rem, 58%);
-  min-height: clamp(23rem, 34vw, 35rem);
+  min-height: clamp(18rem, 24vw, 26rem);
   padding-left: clamp(0rem, 3vw, 4rem);
 }
 
 .story-promise h2 { max-width: 10ch; }
 
 .story-services {
-  margin-top: clamp(3rem, 7vw, 7rem);
+  margin-top: clamp(3rem, 4vw, 4.5rem);
   padding-left: clamp(0rem, 3vw, 4rem);
 }
 
